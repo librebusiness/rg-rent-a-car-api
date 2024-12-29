@@ -8,8 +8,8 @@ export type VehicleDocument = HydratedDocument<Vehicle>;
 
 @Schema({ timestamps: true })
 export class Vehicle {
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'BusinessProfile', required: true })
-    business: BusinessProfile;
+    // @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'BusinessProfile', required: true })
+    // business: BusinessProfile;
 
     @Prop()
     make: string;
