@@ -57,7 +57,7 @@ export class Vehicle {
     features: string[];
 
     @Prop()
-    imageUrl: string;
+    image: string;
 
     @Prop()
     description: string;
