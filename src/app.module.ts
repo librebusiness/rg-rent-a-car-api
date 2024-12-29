@@ -7,6 +7,9 @@ import { APP_GUARD } from '@nestjs/core';
 import { JwtGuard } from './auth/jwt.guard';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { VehiclesModule } from './vehicles/vehicles.module';
+import { LocationsModule } from './locations/locations.module';
+import { BookingsModule } from './bookings/bookings.module';
 
 const { MONGODB_URI } = process.env;
 
@@ -15,6 +18,9 @@ const { MONGODB_URI } = process.env;
     MongooseModule.forRoot(MONGODB_URI),
     UsersModule,
     AuthModule,
+    VehiclesModule,
+    LocationsModule,
+    BookingsModule,
   ],
   controllers: [AppController],
   providers: [

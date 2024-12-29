@@ -40,8 +40,7 @@ export class AuthController {
   @Post('signup')
   async signup(@Body() body: CreateUserDto, @Res() res: any) {
     const result = await this.authService.signUp(res, body);
-    console.log(result)
-    return res.json(result);
+    return res.json({ access_token: result });
   }
 
   @Public()

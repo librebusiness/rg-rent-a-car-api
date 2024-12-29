@@ -37,7 +37,27 @@ export class User {
   photoURL: string;
 
   @Prop()
+  licensePhotoFront: string;
+
+  @Prop()
+  licensePhotoBack: string;
+
+  licenseExpires: Date;
+
+  @Prop({ default: 'cedula' })
+  documentType: string;
+
+  @Prop()
+  documentPhotoFront: string;
+
+  @Prop()
+  documentPhotoBack: string;
+
+  @Prop()
   roles: string[];
+
+  @Prop()
+  remarks: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

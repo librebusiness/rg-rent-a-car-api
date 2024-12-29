@@ -39,9 +39,9 @@ export class AuthService {
   }
 
   private encodeUserDataAsJwt(user: User) {
-    const { passwordHash, ...userData } = user;
+    const { passwordHash, ...userData } = (user as any)._doc;
 
-    return this.jwtService.sign(userData);
+    return this.jwtService.sign({ sub: userData._id, username: userData.username, roles: userData.roles, data: userData });
   }
 
   private async registerGoogleUser(res: Response, user: GoogleUser): Promise<string> {
