@@ -42,6 +42,9 @@ export class BusinessProfile {
 
     @Prop()
     services: string[];
+
+    @Prop({ default: false })
+    primary: boolean;
 }
 
 export const BusinessProfileSchema = SchemaFactory.createForClass(BusinessProfile);
