@@ -1,7 +1,9 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Req } from '@nestjs/common';
 import { BusinessProfileService } from './business-profile.service';
 import { CreateBusinessProfileDto } from './dto/create-business-profile.dto';
 import { UpdateBusinessProfileDto } from './dto/update-business-profile.dto';
+import { Request } from 'express';
+import { Public } from '../auth/public.metadata';
 
 @Controller('business-profile')
 export class BusinessProfileController {
@@ -13,8 +15,9 @@ export class BusinessProfileController {
   }
 
   @Get()
-  findAll() {
-    return this.businessProfileService.findAll();
+  @Public()
+  findAll(@Req() req: Request) {
+    return this.businessProfileService.findAll(req.query);
   }
 
   @Get(':id')
