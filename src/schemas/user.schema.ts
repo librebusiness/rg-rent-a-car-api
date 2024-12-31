@@ -34,6 +34,24 @@ export class User {
   photoURL: string;
 
   @Prop()
+  country: string;
+
+  @Prop()
+  state: string;
+
+  @Prop()
+  city: string;
+
+  @Prop()
+  address: string;
+
+  @Prop()
+  occupation: string;
+
+  @Prop()
+  zipCode: string;
+
+  @Prop()
   licensePhotoFront: string;
 
   @Prop()
@@ -43,6 +61,9 @@ export class User {
 
   @Prop({ default: 'cedula' })
   documentType: string;
+
+  @Prop()
+  documentNumber: string;
 
   @Prop()
   documentPhotoFront: string;
